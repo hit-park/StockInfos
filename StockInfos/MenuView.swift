@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MenuView.swift
 //  StockInfos
 //
 //  Created by 희태 박 on 2022/11/09.
@@ -7,30 +7,45 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    
-    private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+struct MenuView: View {
+    static let SPACING : CGFloat    = 20
+    private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: MenuView.SPACING), count: 2)
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns) {
-                ForEach(Menu.allCases, id: \.self) {
-                    Button($0.rawValue) {
-                        print("")
+        GeometryReader { proxy in
+            VStack {
+                Text("메뉴")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: MenuView.SPACING) {
+                        ForEach(Menu.allCases, id: \.self) { menu in
+                            let wh: CGFloat = (proxy.size.width - 60) / 2
+                            Button {
+                                print("\(menu.rawValue)")
+                            }
+                            label: {
+                                Text(menu.rawValue)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .frame(width: wh, height: wh)
+                                    .background(Color(red: 0.018, green: 0.641, blue: 0.859))
+                                    .cornerRadius(15)
+                            }
+                        }
                     }
-                    .frame(width: 150, height: 150)
-                    .border(.black)
-                    .cornerRadius(15)
-//                    .padding()
+                    .padding(.horizontal, MenuView.SPACING)
                 }
             }
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MenuView()
     }
 }
 
@@ -41,7 +56,7 @@ enum Menu: String, CaseIterable {
     case getDividendRankN1              = "배당순위조회"
     case getSafeDpDutyDepoStatusN1      = "의무보호예수전체현황 전체현황표 조회"
     case getSafeDpDutyDepoRgtStatusN1   = "의무보호예수전체현황 사유별조회"
-    case getNewDepoSecnListN1           = "신규예탁지정종목조회"
+    case getNewDepoSecnListN1           = "신규예탁지정 종목조회"
     case getListStatN1                  = "상장구분별 현황조회"
     case getStkListInfoN1               = "주식상장정보 조회"
     case getXrcStkStatInfoN1            = "주식관련사채정보 조회"

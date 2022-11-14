@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A324C418291BEBB000B15865 /* StockInfosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C417291BEBB000B15865 /* StockInfosApp.swift */; };
-		A324C41A291BEBB000B15865 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C419291BEBB000B15865 /* ContentView.swift */; };
+		A324C41A291BEBB000B15865 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C419291BEBB000B15865 /* MenuView.swift */; };
 		A324C41C291BEBB200B15865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A324C41B291BEBB200B15865 /* Assets.xcassets */; };
 		A324C41F291BEBB200B15865 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A324C41E291BEBB200B15865 /* Preview Assets.xcassets */; };
 		A324C429291BEBB200B15865 /* StockInfosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C428291BEBB200B15865 /* StockInfosTests.swift */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		A324C414291BEBB000B15865 /* StockInfos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockInfos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A324C417291BEBB000B15865 /* StockInfosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfosApp.swift; sourceTree = "<group>"; };
-		A324C419291BEBB000B15865 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A324C419291BEBB000B15865 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		A324C41B291BEBB200B15865 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A324C41E291BEBB200B15865 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A324C424291BEBB200B15865 /* StockInfosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockInfosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				A324C417291BEBB000B15865 /* StockInfosApp.swift */,
-				A324C419291BEBB000B15865 /* ContentView.swift */,
+				A324C419291BEBB000B15865 /* MenuView.swift */,
 				A324C41B291BEBB200B15865 /* Assets.xcassets */,
 				A324C41D291BEBB200B15865 /* Preview Content */,
 			);
@@ -265,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A324C41A291BEBB000B15865 /* ContentView.swift in Sources */,
+				A324C41A291BEBB000B15865 /* MenuView.swift in Sources */,
 				A324C418291BEBB000B15865 /* StockInfosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
