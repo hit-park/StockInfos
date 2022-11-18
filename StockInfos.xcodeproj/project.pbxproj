@@ -14,6 +14,10 @@
 		A324C429291BEBB200B15865 /* StockInfosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C428291BEBB200B15865 /* StockInfosTests.swift */; };
 		A324C433291BEBB200B15865 /* StockInfosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C432291BEBB200B15865 /* StockInfosUITests.swift */; };
 		A324C435291BEBB200B15865 /* StockInfosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C434291BEBB200B15865 /* StockInfosUITestsLaunchTests.swift */; };
+		A32E5DB22922911F00085B20 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E5DB12922911F00085B20 /* ListView.swift */; };
+		A32E5DB4292291F400085B20 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E5DB3292291F400085B20 /* ListModel.swift */; };
+		A32E5DB62922920900085B20 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E5DB52922920900085B20 /* ListViewModel.swift */; };
+		A3405A102923E0D400C524BC /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = A3405A0F2923E0D400C524BC /* XMLCoder */; };
 		A35F971B291BEED3003268A1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A35F971A291BEED3003268A1 /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,10 @@
 		A324C42E291BEBB200B15865 /* StockInfosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockInfosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A324C432291BEBB200B15865 /* StockInfosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfosUITests.swift; sourceTree = "<group>"; };
 		A324C434291BEBB200B15865 /* StockInfosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A32E5DB12922911F00085B20 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		A32E5DB3292291F400085B20 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		A32E5DB52922920900085B20 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		A3405A0A2923C90A00C524BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3405A102923E0D400C524BC /* XMLCoder in Frameworks */,
 				A35F971B291BEED3003268A1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,8 +105,10 @@
 		A324C416291BEBB000B15865 /* StockInfos */ = {
 			isa = PBXGroup;
 			children = (
+				A3405A0A2923C90A00C524BC /* Info.plist */,
 				A324C417291BEBB000B15865 /* StockInfosApp.swift */,
 				A324C419291BEBB000B15865 /* MenuView.swift */,
+				A32E5DB02922910600085B20 /* List */,
 				A324C41B291BEBB200B15865 /* Assets.xcassets */,
 				A324C41D291BEBB200B15865 /* Preview Content */,
 			);
@@ -129,6 +140,16 @@
 			path = StockInfosUITests;
 			sourceTree = "<group>";
 		};
+		A32E5DB02922910600085B20 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				A32E5DB12922911F00085B20 /* ListView.swift */,
+				A32E5DB3292291F400085B20 /* ListModel.swift */,
+				A32E5DB52922920900085B20 /* ListViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +168,7 @@
 			name = StockInfos;
 			packageProductDependencies = (
 				A35F971A291BEED3003268A1 /* Alamofire */,
+				A3405A0F2923E0D400C524BC /* XMLCoder */,
 			);
 			productName = StockInfos;
 			productReference = A324C414291BEBB000B15865 /* StockInfos.app */;
@@ -222,6 +244,7 @@
 			mainGroup = A324C40B291BEBB000B15865;
 			packageReferences = (
 				A35F9719291BEED3003268A1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A3405A0E2923E0D400C524BC /* XCRemoteSwiftPackageReference "XMLCoder" */,
 			);
 			productRefGroup = A324C415291BEBB000B15865 /* Products */;
 			projectDirPath = "";
@@ -265,8 +288,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A32E5DB62922920900085B20 /* ListViewModel.swift in Sources */,
 				A324C41A291BEBB000B15865 /* MenuView.swift in Sources */,
 				A324C418291BEBB000B15865 /* StockInfosApp.swift in Sources */,
+				A32E5DB22922911F00085B20 /* ListView.swift in Sources */,
+				A32E5DB4292291F400085B20 /* ListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +453,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"StockInfos/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StockInfos/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -455,6 +482,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"StockInfos/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StockInfos/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -587,6 +615,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A3405A0E2923E0D400C524BC /* XCRemoteSwiftPackageReference "XMLCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MaxDesiatov/XMLCoder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
 		A35F9719291BEED3003268A1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -598,6 +634,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A3405A0F2923E0D400C524BC /* XMLCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3405A0E2923E0D400C524BC /* XCRemoteSwiftPackageReference "XMLCoder" */;
+			productName = XMLCoder;
+		};
 		A35F971A291BEED3003268A1 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A35F9719291BEED3003268A1 /* XCRemoteSwiftPackageReference "Alamofire" */;
