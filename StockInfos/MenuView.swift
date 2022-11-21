@@ -12,7 +12,7 @@ struct MenuView: View {
     private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: MenuView.SPACING), count: 2)
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             GeometryReader { proxy in
                 VStack {
                     Text("메뉴")
@@ -21,10 +21,8 @@ struct MenuView: View {
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: MenuView.SPACING) {
                             ForEach(Menu.allCases, id: \.self) { menu in
-                                let wh: CGFloat = (proxy.size.width - 60) / 2
-                                NavigationLink {
-                                    ListView(menu: menu)
-                                } label: {
+                                let wh: CGFloat = proxy.size.width > 0 ? (proxy.size.width - 60) / 2 : 0
+                                NavigationLink(value: menu) {
                                     Text(menu.title)
                                         .font(.title2)
                                         .fontWeight(.bold)
@@ -34,10 +32,10 @@ struct MenuView: View {
                                         .background(Color(red: 0.018, green: 0.641, blue: 0.859))
                                         .cornerRadius(15)
                                 }
-
                             }
                         }
                         .padding(.horizontal, MenuView.SPACING)
+                        .navigationDestination(for: Menu.self) { ListView(menu: $0) }
                     }
                 }
             }
@@ -97,53 +95,6 @@ enum Menu: String, CaseIterable {
         case .getVctfDivRankInfo             : return "유가증권시장 배당순위 조회"
         case .getLostStkInfo                 : return "주권 사고신고 조회"
         }
-    }
-    
-    var model: Codable {
-        switch self {
-        case .getStkIsinByNmN1:
-            break
-        default:
-            break
-//        case .getStkIsinByShortIsinN1:
-//            <#code#>
-//        case .getDividendRankN1:
-//            <#code#>
-//        case .getSafeDpDutyDepoStatusN1:
-//            <#code#>
-//        case .getSafeDpDutyDepoRgtStatusN1:
-//            <#code#>
-//        case .getNewDepoSecnListN1:
-//            <#code#>
-//        case .getListStatN1:
-//            <#code#>
-//        case .getStkListInfoN1:
-//            <#code#>
-//        case .getXrcStkStatInfoN1:
-//            <#code#>
-//        case .getXrcStkOptionXrcInfoN1:
-//            <#code#>
-//        case .getDocInfoN1:
-//            <#code#>
-//        case .getWrtInfoN1:
-//            <#code#>
-//        case .getShotnByMartN1:
-//            <#code#>
-//        case .getKDRIssuLmtDetailsN1:
-//            <#code#>
-//        case .getSecSetlCostStatN1:
-//            <#code#>
-//        case .getTotIssuStkQty:
-//            <#code#>
-//        case .getBuyDmanRsn:
-//            <#code#>
-//        case .getKDRSecnInfo:
-//            <#code#>
-//        case .getVctfDivRankInfo:
-//            <#code#>
-//        case .getLostStkInfo:
-//            <#code#>
-//        }
     }
 }
 

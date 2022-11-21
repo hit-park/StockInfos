@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ListView: View {
     
-    private var model: ListModel
+    private var vm: ListViewModel
     
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
     
     init(menu: Menu) {
-        model = ListModel(menu: menu)
+        vm = ListViewModel(menu: menu)
     }
 }
 

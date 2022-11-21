@@ -46,6 +46,8 @@ class ListModel {
     private var numOfRows   : Int    = 10
     private let menu        : Menu
     
+    var completiton: ((Response<Item>?) -> Void) = { _ in }
+    
     init(menu: Menu) {
         self.menu = menu
         fetch()
@@ -66,9 +68,7 @@ class ListModel {
             switch res.result {
             case .success(let data):
                 guard let data = data else { return }
-                let a: Response<Item>? = self?.decoding(data: data)
-                print(a)
-                break
+                self?.completiton(self?.decoding(data: data))
             case .failure(_):
                 break
             }
