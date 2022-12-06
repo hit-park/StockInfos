@@ -17,7 +17,8 @@ struct ListView: UIViewRepresentable {
     }
     
     func makeUIView(context: Context) -> UICollectionView {
-        let cv: UICollectionView = .init(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        let layout: UICollectionViewFlowLayout = .init()
+        let cv: UICollectionView = .init(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .red
         cv.dataSource = context.coordinator
         cv.delegate = context.coordinator
@@ -34,7 +35,7 @@ struct ListView: UIViewRepresentable {
     }
 }
 
-class Coordinator: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class Coordinator: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     private var parent: ListView
     
